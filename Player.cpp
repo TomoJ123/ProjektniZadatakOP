@@ -201,10 +201,12 @@ void Player::setMyBoats()
 	}
 }
 
-void Player::shoot(int x,int y)
+void Player::shoot(int& x,int& y)
 {
+
 	int istrue = 0;
 	while (istrue != 1) {
+		cout << x << y;
 		if ((x < height && x>0 && y < width && y>0) && targetBoard[x][y] == ' ')
 		{
 			targetBoard[x][y] = 'x';
@@ -225,7 +227,7 @@ void Player::shoot(int x,int y)
 
 int Player::checkBoats(int x, int y)
 {
-	if (myBoard[x][y] != ' ')
+	if (myBoard[x][y] == '<' || myBoard[x][y] == '>' || myBoard[x][y] == '-'  )
 	{
 		myBoard[x][y] = 'x';
 		cout << "you shoot the part of the boat!" << endl;

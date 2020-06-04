@@ -16,7 +16,7 @@ public:
 	~Player();
 	void showMyBoards();
 	void setMyBoats();
-	void shoot(int,int);
+	void shoot(int&,int&);
 	int checkBoats(int, int);
 	void setscore(int);
 	string getname();
